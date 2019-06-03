@@ -1,0 +1,259 @@
+@font-face {
+    font-family: Circular;
+    src: url(fonts/CircularStd-Book.woff);
+}
+  
+
+body
+{
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    font-family: Circular;
+    /* position: relative; */
+}
+
+/***** CUBE 3D PRINCIPAL *******/
+
+.cube-3d
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    perspective: 800px;
+    cursor: pointer;
+}
+
+.cube-3d *
+{
+    transform-style: preserve-3d;
+}
+
+.cube-3d .face
+{
+    position: absolute;
+    top: -150px;
+    left: -150px;
+    width: 300px;
+    height: 300px;
+    background-color: #000;
+    border: 2px solid white;
+}
+
+.cube-3d .face p
+{
+    width: 60%;
+    height: 50%;
+    margin: auto;
+    margin-top: 20%;
+    font-size: 3rem;
+    text-align: center;
+    color: white;
+    user-select: none;
+}
+
+.cube-3d .face-1 {background-color: #000; transform: translateZ(150px); }
+.cube-3d .face-2 {background-color: #000; transform: rotateY(90deg) translateZ(150px); }
+.cube-3d .face-3 {background-color: #000; transform: rotateY(180deg) translateZ(150px); }
+.cube-3d .face-4 {background-color: #000; transform: rotateY(-90deg) translateZ(150px); }
+.cube-3d .face-5 {background-color: #000; transform: rotateX(90deg) translateZ(150px); }
+.cube-3d .face-6 {background-color: #000; transform: rotateX(-90deg) translateZ(150px); }
+
+/******* SMALL CUBES ********/
+
+.position{
+    top: 50%;
+    left:50%;
+}
+
+/******************
+.small-cube-3d .small-face
+{
+    position: absolute;
+    width: 149px;
+    height: 149px;
+    background-color: #000;
+    border: 2px solid white;
+}
+
+.small-cube-3d .small-face .small-cube-text 
+{
+    width: 100%;
+    height: auto;
+    margin: auto;
+    margin-top: 40%;
+    font-size: 1.5em;
+    text-align: center;
+    color: white;
+    user-select: none;
+}
+
+.small-cube-3d .face-1 {background-color: #000; transform: translateZ(76px); }
+.small-cube-3d .face-2 {background-color: #000; transform: rotateY(90deg) translateZ(76px); }
+.small-cube-3d .face-3 {background-color: #000; transform: rotateY(180deg) translateZ(76px); }
+.small-cube-3d .face-4 {background-color: #000; transform: rotateY(-90deg) translateZ(76px); }
+.small-cube-3d .face-5 {background-color: #000; transform: rotateX(90deg) translateZ(76px); }
+.small-cube-3d .face-6 {background-color: #000; transform: rotateX(-90deg) translateZ(76px); }
+
+.home .small-face
+{
+    top:-149px;
+    left:-149px;
+}
+.about .small-face
+{
+    left:-149px;
+}
+
+.contact .small-face
+{
+    top:-149px;
+} */
+
+
+/*********************************/
+
+.cube-container
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+ 
+.small-cube-3d {
+    perspective: 800px;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    color: white;
+    opacity: 0;
+}
+
+.small-cube-3d *
+{
+    transform-style: preserve-3d;
+}
+ 
+.small-cube-3d div div{
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+    background: black;
+    border: 2px solid white;
+    position: absolute;
+}
+ 
+.small-cube-3d div.top {
+    transform: rotateX(90deg); 
+    margin-top: -75PX;
+}
+ 
+.small-cube-3d div.right {
+    transform: rotateY(90deg); 
+    margin-left: 75PX;
+}
+ 
+.small-cube-3d div.bottom {
+    transform: rotateX(-90deg); 
+    margin-top: 75PX;
+}
+ 
+ .small-cube-3d div.left {
+    transform: rotateY(-90deg); 
+    margin-left: -75PX;
+}
+
+.small-cube-3d div.front {
+    transform: translateZ(75PX);
+}
+
+.small-cube-3d div.back {
+    transform: translateZ(-75PX) rotateX(180deg);
+}
+/* 
+.small-cube-3d .small-face .small-cube-text 
+{
+    width: 100%;
+    height: auto;
+    margin: auto;
+    margin-top: 40%;
+    font-size: 1.5em;
+    text-align: center;
+    color: white;
+    user-select: none;
+} */
+
+.home
+{
+    transform: translateX(-55%) translateY(-55%);
+}
+.about
+{
+    transform: translateX(-55%) translateY(55%);    
+}
+
+.contact
+{
+    transform: translateX(55%) translateY(-55%);    
+}
+
+.projects
+{
+    transform: translateX(55%) translateY(55%);    
+}
+
+
+/*********************************/
+
+/* 
+.small .face
+{
+    position: absolute;  
+    width: 150px;
+    height: 150px;
+    background-color: #000;
+    border: 2px solid white;
+}
+
+.small .face-1 {background-color: #000; transform: translateZ(75px); }
+.small .face-2 {background-color: #000; transform: rotateY(90deg) translateZ(75px); }
+.small .face-3 {background-color: #000; transform: rotateY(180deg) translateZ(75px); }
+.small .face-4 {background-color: #000; transform: rotateY(-90deg) translateZ(75px); }
+.small .face-5 {background-color: #000; transform: rotateX(90deg) translateZ(75px); }
+.small .face-6 {background-color: #000; transform: rotateX(-90deg) translateZ(75px); }
+
+ .home .face
+{
+    top: 400px;
+    left: 400px;
+    
+    .about .face
+    {
+        top: -50px;
+        left: -200px;
+    }
+    
+    .projets .face
+    {
+        top: -50px;
+        left: -50px;
+    }
+    
+    .contact .face
+    {
+        top: -200px;
+        left: -50px;
+    }
+    
+    .small .face p
+    {
+        width: 100%;
+        font-size: 1.5em;
+        margin-top: 40%;
+    }
+} 
+
+*/
