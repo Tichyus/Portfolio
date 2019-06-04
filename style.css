@@ -8,18 +8,35 @@ body
 {
     background-color: #000;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     font-family: Circular;
+    margin: 0;
     /* position: relative; */
 }
 
 /***** CUBE 3D PRINCIPAL *******/
 
-.cube-3d
+.test
 {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top:0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.x-axis
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cube-3d
+{
     perspective: 800px;
     cursor: pointer;
 }
@@ -32,20 +49,19 @@ body
 .cube-3d .face
 {
     position: absolute;
-    top: -150px;
-    left: -150px;
     width: 274px;
     height: 274px;
     background-color: #000;
     border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .cube-3d .face p
 {
-    width: 60%;
-    height: 50%;
-    margin: auto;
-    margin-top: 20%;
+    width: auto;
+    height: auto;
     font-size: 3rem;
     text-align: center;
     color: white;
@@ -59,22 +75,40 @@ body
 .cube-3d .face-5 {background-color: #000; transform: rotateX(90deg) translateZ(138px); }
 .cube-3d .face-6 {background-color: #000; transform: rotateX(-90deg) translateZ(138px); }
 
-/******* SMALL CUBES ********/
-
-.position{
-    top: 50%;
-    left:50%;
+.line
+{
+    position: absolute;
+    transition: ease-in 0.8s;
 }
+
+.line:nth-of-type(1)
+{
+    height : 0%;
+    width: 2px;
+    left: 50%;
+    background-color: white;
+}
+
+.line:nth-of-type(2)
+{
+    width : 0%;
+    height: 2px;
+    top: 50%;
+    background-color: white;
+}
+
+/******* SMALL CUBES ********/
 
 .cube-container
 {
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
+    position: relative;
 }
- 
+
 .small-cube-3d {
     perspective: 800px;
     position: absolute;
@@ -89,9 +123,11 @@ body
     transform-style: preserve-3d;
 }
 
-.small-cube-3d div
+.small-axe div
 {
-    transform : translateX(-82px) translateY(-82px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .small-cube-3d div div{
@@ -135,9 +171,8 @@ body
 
 .small-cube-3d .small-cube-text 
 {
-    width: 100%;
+    width: auto;
     height: auto;
-    margin: auto;
     font-size: 1.5em;
     text-align: center;
     color: white;
@@ -169,3 +204,28 @@ body
 
 
 /*********************************/
+
+.is-active
+{
+    transition: 1.5s ease;
+}
+
+.is-active:nth-of-type(1)
+{
+    transform: translate(calc(-50vw + 150px), calc(-50vh + 150px));
+}
+
+.is-active:nth-of-type(2)
+{
+    transform: translate(calc(50vw - 150px), calc(-50vh + 150px));
+}
+
+.is-active:nth-of-type(4)
+{
+    transform: translate(calc(50vw - 150px), calc(50vh - 150px));
+}
+
+.is-active:nth-of-type(3)
+{
+    transform: translate(calc(-50vw + 150px), calc(50vh - 150px));
+}
