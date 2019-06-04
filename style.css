@@ -11,7 +11,7 @@ body
     height: 100vh;
     font-family: Circular;
     margin: 0;
-    /* position: relative; */
+    color: white;
 }
 
 /***** CUBE 3D PRINCIPAL *******/
@@ -202,9 +202,6 @@ body
     will-change: bottom, right;
 }
 
-
-/*********************************/
-
 .is-active
 {
     transition: 1.5s ease;
@@ -228,4 +225,78 @@ body
 .is-active:nth-of-type(3)
 {
     transform: translate(calc(-50vw + 150px), calc(50vh - 150px));
+}
+
+/*********************************/
+
+main
+{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    opacity: 0;
+    transition: 2s ease-in;
+}
+
+.main-text
+{
+    width: 60%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.my-name
+{
+    position: relative;
+    height: 200px;
+    width: 100%;
+}
+
+.my-name h1
+{
+    margin: 0;
+    position: absolute;
+    top:0;
+    font-size: 7rem;
+    color: black;
+    text-shadow:
+    -1px -1px 0 #fff,  
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+}
+
+.my-name h2
+{
+    color: rgba(255, 255, 255, 0.493);
+    margin: 0;
+    margin-left: 5%;
+    position: absolute;
+    top: 4.5rem;
+    left: 0;
+    font-size: 3.5rem;
+}
+
+.presentation
+{
+    width: 100%;
+    font-size: 1.5em;
+}
+
+.sequel
+{
+    bottom: 10%;
+}
+
+a
+{
+    color: #0DE595;
+    text-decoration: none;
 }

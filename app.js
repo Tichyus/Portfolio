@@ -9,6 +9,7 @@ let about_cube = document.querySelector('.about');
 let projects_cube = document.querySelector('.projects');
 let axe = document.querySelectorAll('.small-axe');
 let lines = document.querySelectorAll('.line');
+let main = document.querySelector('main');
 let rotation = true;
 let x = 1;
 let a = 1;
@@ -35,11 +36,9 @@ cube.onclick= function()
         }
         cube.style.opacity = '0';
         cube.style.transition = '1s ease-in';
+        main.style.display = "block";
     }, 3000);
 
-    setTimeout(() => {
-        
-    }, 3000);
 
     setTimeout(() => {
         x=0;
@@ -49,6 +48,7 @@ cube.onclick= function()
             small_cubes[i].classList.add("is-active");
         }
 
+        main.style.opacity = "1";
         
         setInterval(() => {
             for (let i = 0; i < axe.length; i++) {
