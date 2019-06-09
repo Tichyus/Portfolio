@@ -1,5 +1,6 @@
 let axisX = document.querySelector('.x-axis');
 let axisY = document.querySelector('.y-axis');
+let cube_container = document.querySelector('.cube-container');
 let cube = document.querySelector('.cube-3d');
 let small_cubes = document.querySelectorAll('.small-cube-3d');
 let cube_texts = document.querySelectorAll('.cube-text');
@@ -42,7 +43,7 @@ cube.onclick= function()
 
     setTimeout(() => {
         x=0;
-
+        cube_container.style.display = 'none';
 
         for (let i = 0; i < small_cubes.length; i++) {
             small_cubes[i].classList.add("is-active");
@@ -54,7 +55,6 @@ cube.onclick= function()
             for (let i = 0; i < axe.length; i++) {
                 a = (a+0.08)%360;
                 axe[i].style.transform = `rotateY(${a}deg)`;
-                console.log(a);
             }
         }, 25);
 
