@@ -301,6 +301,15 @@ main
     width: max-content;
 }
 
+.presentation-container
+{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .page-title h1
 {
     width: max-content;
@@ -339,7 +348,7 @@ main
 
 .sequel
 {
-    bottom: 10%;
+    margin-top: 3rem;
 }
 
 ul{
@@ -385,36 +394,36 @@ a
 } 
 .animated-text:after 
 {
-    color: rgb(255, 0, 76);
+    color: rgb(255, 255, 255);
     z-index: -2;
 } 
 .animated-text:before 
 {
-    color: rgb(0, 102, 255);
+    color: #0DE595;
     z-index: -1;
 }
-.animated-text:not(h1):hover::before
+.animated-text:hover::before
 {
     -webkit-animation: glitch .3s cubic-bezier(.25, .46, .45, .94) both 5; 
     -moz-animation:    glitch .3s cubic-bezier(.25, .46, .45, .94) both 5; 
     -o-animation:      glitch .3s cubic-bezier(.25, .46, .45, .94) both 5; 
     animation: glitch .3s cubic-bezier(.25, .46, .45, .94) both 5;
 }
-.animated-text:not(h1):hover::after 
+.animated-text:hover::after 
 {
     -webkit-animation: glitch .3s cubic-bezier(.25, .46, .45, .94) both 5; 
     -moz-animation:    glitch .3s cubic-bezier(.25, .46, .45, .94) both 5; 
     -o-animation:      glitch .3s cubic-bezier(.25, .46, .45, .94) both 5; 
     animation: glitch .3s cubic-bezier(.25, .46, .45, .94) reverse both 5; 
 }
-.test:before
+h1.animated-text:before
 {
     -webkit-animation: glitch .3s cubic-bezier(.25, .46, .45, .94) both 5; 
     -moz-animation:    glitch .3s cubic-bezier(.25, .46, .45, .94) both 5; 
     -o-animation:      glitch .3s cubic-bezier(.25, .46, .45, .94) both 5; 
     animation: glitchh1 .3s cubic-bezier(.25, .46, .45, .94) both 5 !important;
 }
-.test:after 
+h1.animated-text:after 
 {
     -webkit-animation: glitch .3s cubic-bezier(.25, .46, .45, .94) both 5; 
     -moz-animation:    glitch .3s cubic-bezier(.25, .46, .45, .94) both 5; 

@@ -149,17 +149,17 @@ cube.addEventListener('mouseenter', e =>
                 element.innerText = "I'M SORRY DAVE"
             });
         }
-    }, 5000);
+    }, 3000);
     setTimeout(() => 
     {
         if (!isclicked) 
         {
             cube_texts.forEach(element => 
             {
-                element.innerText = "I'M SORRY DAVE<$r>ERROR^&$I'M SORRY DAVE"
+                element.innerText = "I'MSORRYDAVE<$r>ERROR^&$"
             });
         }
-    }, 7500);
+    }, 5500);
 });
 cube.addEventListener('mouseleave', e => 
 {
