@@ -32,6 +32,19 @@ body
     height: 100%;
 }
 
+.cube-container {
+    -webkit-animation: fadein 4s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 4s; /* Firefox < 16 */
+        -ms-animation: fadein 4s; /* Internet Explorer */
+         -o-animation: fadein 4s; /* Opera < 12.1 */
+            animation: fadein 4s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
 .x-axis
 {
     display: flex;
@@ -258,7 +271,7 @@ main
 
 .main-text
 {
-    width: 100%;
+    width: 90%;
     height: 100%;
     margin: auto;
     display: flex;
@@ -267,18 +280,34 @@ main
     align-items: center;
 }
 
-.my-name
-{
-    position: relative;
-    height: 200px;
-    width: 100%;
+.landing-text, .contact-text, .about-text, .projects-text{
+    display: none;
+    opacity: 0;
+    transition: .5s ease-in-out;
+    height: 60%;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.my-name h1
+.page-title-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.page-title
 {
+    position: relative;
+    height: 150px;
+    width: max-content;
+}
+
+.page-title h1
+{
+    width: max-content;
     margin: 0;
     position: absolute;
     top:0;
+    transform: translateX(-50%);
     font-size: 6rem;
     color: black;
     text-shadow:
@@ -288,21 +317,24 @@ main
     1px 1px 0 #fff;
 }
 
-.my-name h2
+.page-title h2
 {
+    width: max-content;
     color: #0DE595;
     margin: 0;
     margin-left: 2%;
     position: absolute;
-    top: 5.5rem;
-    left: 0;
+    top: 3.5rem;
+    left: -2rem;
     font-size: 3.5rem;
+    opacity: 0.7;
 }
 
 .presentation
 {
     width: 100%;
-    font-size: 1.5em;
+    font-size: 1.2rem;
+    text-align: center;
 }
 
 .sequel
@@ -310,9 +342,105 @@ main
     bottom: 10%;
 }
 
+ul{
+    margin: auto;
+    margin-top: 2rem;
+    width: fit-content;
+}
+li
+{
+    margin: auto;
+    list-style: none;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+li img
+{
+    width : 1.5rem;
+    margin-right: 1rem;
+}
 
 a
 {
     color: #0DE595;
     text-decoration: none;
+}
+.animated-text 
+{
+	margin: 0 2px;
+    position: relative;
+}
+.animated-text:before, .animated-text:after 
+{
+    display: block;
+    content: attr(data-glitch);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: .8;
+} 
+.animated-text:after 
+{
+    color: rgb(255, 0, 76);
+    z-index: -2;
+} 
+.animated-text:before 
+{
+    color: rgb(0, 102, 255);
+    z-index: -1;
+}
+.animated-text:not(h1):hover::before
+{
+    -webkit-animation: glitch .3s cubic-bezier(.25, .46, .45, .94) both 5; 
+    -moz-animation:    glitch .3s cubic-bezier(.25, .46, .45, .94) both 5; 
+    -o-animation:      glitch .3s cubic-bezier(.25, .46, .45, .94) both 5; 
+    animation: glitch .3s cubic-bezier(.25, .46, .45, .94) both 5;
+}
+.animated-text:not(h1):hover::after 
+{
+    -webkit-animation: glitch .3s cubic-bezier(.25, .46, .45, .94) both 5; 
+    -moz-animation:    glitch .3s cubic-bezier(.25, .46, .45, .94) both 5; 
+    -o-animation:      glitch .3s cubic-bezier(.25, .46, .45, .94) both 5; 
+    animation: glitch .3s cubic-bezier(.25, .46, .45, .94) reverse both 5; 
+}
+.test:before
+{
+    -webkit-animation: glitch .3s cubic-bezier(.25, .46, .45, .94) both 5; 
+    -moz-animation:    glitch .3s cubic-bezier(.25, .46, .45, .94) both 5; 
+    -o-animation:      glitch .3s cubic-bezier(.25, .46, .45, .94) both 5; 
+    animation: glitchh1 .3s cubic-bezier(.25, .46, .45, .94) both 5 !important;
+}
+.test:after 
+{
+    -webkit-animation: glitch .3s cubic-bezier(.25, .46, .45, .94) both 5; 
+    -moz-animation:    glitch .3s cubic-bezier(.25, .46, .45, .94) both 5; 
+    -o-animation:      glitch .3s cubic-bezier(.25, .46, .45, .94) both 5; 
+    animation: glitchh1 .3s cubic-bezier(.25, .46, .45, .94) reverse both 5 !important; 
+}
+@keyframes glitch 
+{
+	0% {transform: translate(0)}
+	20% {transform: translate(-3px, 3px)}
+	40% {transform: translate(-3px, -3px)}
+	60% {transform: translate(3px, 3px)}
+	80% {transform: translate(3px, -3px)}
+	to {transform: translate(0)}
+}
+@keyframes glitchh1 
+{
+	0% {transform: translate(0)}
+	20% {transform: translate(-5px, 5px)}
+	40% {transform: translate(-5px, -5px)}
+	60% {transform: translate(5px, 5px)}
+	80% {transform: translate(5px, -5px)}
+	to {transform: translate(0)}
+}
+
+div.visible{
+    display: flex;
+    opacity: 1;
 }
